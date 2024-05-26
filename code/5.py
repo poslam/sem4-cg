@@ -6,7 +6,7 @@ asset_folder = "./assets"
 
 data = []
 
-with open(f"{asset_folder}/in/45.csv", "r") as csv_file:
+with open(f"{asset_folder}/in/45.csv", "r", encoding="utf-8") as csv_file:
     reader = csv.reader(csv_file, delimiter=",")
     for row_index, row in enumerate(reader):
         data.append(row)
@@ -73,7 +73,7 @@ for sheet in sheets:
             "categories": [sheet.name, 5, 12, 11, 12],
         }
     )
-    
+
     block_chart.set_legend({"position": "none"})
 
     sheet.insert_chart("P17", block_chart)

@@ -15,7 +15,7 @@ args = parser.parse_args()
 
 data = []
 
-with open(f"{asset_folder}/in/{args.input_file}", "r") as csv_file:
+with open(f"{asset_folder}/in/{args.input_file}", "r", encoding="utf-8") as csv_file:
     reader = csv.reader(csv_file, delimiter=args.separator)
 
     workbook = xlsxwriter.Workbook(f"{asset_folder}/out/{args.output_file}")
@@ -27,4 +27,4 @@ with open(f"{asset_folder}/in/{args.input_file}", "r") as csv_file:
 
     workbook.close()
 
-### python 4.py 45.csv 4.xlsx , 
+### python 4.py 45.csv 4.xlsx ","
